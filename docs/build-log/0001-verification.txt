@@ -1,0 +1,91 @@
+
+> pinoy-ppc-academy@0.2.0 verify
+> npm run guard:no-ai && npm run guard:content && npm run typecheck && npm run lint && npm run test && npm run build
+
+
+> pinoy-ppc-academy@0.2.0 guard:no-ai
+> node scripts/check-no-ai.mjs
+
+No AI dependencies found.
+
+> pinoy-ppc-academy@0.2.0 guard:content
+> node scripts/check-content-trust.mjs
+
+Content trust guard passed.
+
+> pinoy-ppc-academy@0.2.0 typecheck
+> tsc --noEmit
+
+
+> pinoy-ppc-academy@0.2.0 lint
+> eslint .
+
+
+> pinoy-ppc-academy@0.2.0 test
+> vitest run
+
+
+[1m[46m RUN [49m[22m [36mv3.2.7 [39m[90m/mnt/data/pinoy-ppc-academy[39m
+
+ [32m✓[39m src/lib/landing/routes.test.ts [2m([22m[2m3 tests[22m[2m)[22m[32m 3[2mms[22m[39m
+ [32m✓[39m src/lib/domain/search-term-triage.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 4[2mms[22m[39m
+ [32m✓[39m src/lib/domain/ppc-metrics.test.ts [2m([22m[2m4 tests[22m[2m)[22m[32m 73[2mms[22m[39m
+ [32m✓[39m src/components/labs/MetricsLab.test.tsx [2m([22m[2m1 test[22m[2m)[22m[32m 106[2mms[22m[39m
+ [32m✓[39m src/components/marketing/AudienceSelector.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[33m 494[2mms[22m[39m
+   [33m[2m✓[22m[39m AudienceSelector[2m > [22mupdates without navigation [33m 309[2mms[22m[39m
+ [32m✓[39m src/app/page.test.tsx [2m([22m[2m4 tests[22m[2m)[22m[33m 693[2mms[22m[39m
+   [33m[2m✓[22m[39m landing page[2m > [22mstates the beginner promise and constraints [33m 490[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+[2m      Tests [22m [1m[32m18 passed[39m[22m[90m (18)[39m
+[2m   Start at [22m 17:44:32
+[2m   Duration [22m 15.50s[2m (transform 1.16s, setup 2.25s, collect 2.47s, tests 1.37s, environment 18.86s, prepare 10.30s)[22m
+
+
+> pinoy-ppc-academy@0.2.0 build
+> next build
+
+▲ Next.js 16.2.10 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.1s
+  Running TypeScript ...
+  Finished TypeScript in 3.1s ...
+  Collecting page data using 15 workers ...
+
+> pinoy-ppc-academy@0.2.0 build
+> next build
+
+▲ Next.js 16.2.10 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 5.0s
+  Running TypeScript ...
+  Finished TypeScript in 3.0s ...
+  Collecting page data using 15 workers ...
+  Generating static pages using 15 workers (0/14) ...
+  Generating static pages using 15 workers (3/14) 
+  Generating static pages using 15 workers (6/14) 
+  Generating static pages using 15 workers (10/14) 
+✓ Generating static pages using 15 workers (14/14) in 703ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ○ /accessibility
+├ ○ /app
+├ ○ /app/courses/va-career-starter
+├ ○ /app/practice/metrics-lab
+├ ○ /app/practice/search-term-triage
+├ ○ /privacy
+├ ○ /refund-policy
+├ ○ /signin
+├ ○ /signup
+└ ○ /terms
+
+
+○  (Static)  prerendered as static content
+
+\nBuild rerun completed successfully after verification command wrapper timeout.

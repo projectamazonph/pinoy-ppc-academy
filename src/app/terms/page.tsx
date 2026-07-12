@@ -1,0 +1,2 @@
+import { InfoPage } from "@/components/marketing/InfoPage";
+export default function Page(){return <InfoPage title="Use the training honestly." intro="Enrollment grants personal access to the included materials and practice systems under the selected tier." sections={[["Accounts","Do not share, resell, automate, or abuse account access."],["Portfolio","Training outputs must remain labeled as simulations, not paid client work."],["Outcomes","Completion does not guarantee employment, clients, income, or Amazon certification."]]}/>}

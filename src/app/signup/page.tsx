@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { Brand } from "@/components/brand/Brand";
+export default function SignupPage(){return <main className="simple-page"><section><Brand/><p className="eyebrow">Account creation</p><h1>Save your route and start learning.</h1><p>The production authentication milestone will connect this form to secure account storage. Your selected path or tier is already preserved in the URL.</p><form><label>Email<input type="email" placeholder="you@example.com"/></label><label>Password<input type="password" placeholder="At least 12 characters"/></label><Link className="btn btn-primary" href="/app">Enter learner demo</Link></form></section></main>}

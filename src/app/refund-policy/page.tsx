@@ -1,0 +1,2 @@
+import { InfoPage } from "@/components/marketing/InfoPage";
+export default function Page(){return <InfoPage title="Refunds follow a visible review process." intro="The final launch policy will be shown before checkout and recorded with each purchase." sections={[["Review window","The planned standard review window is seven calendar days from payment."],["Processing","Approved refunds return through the supported provider process and update enrollment access."],["Mistakes","Duplicate or unauthorized charges should be reported promptly with the transaction reference."]]}/>}
