@@ -1,0 +1,2 @@
+// @vitest-environment node
+import{it,expect}from"vitest";import{openAcademyDatabase}from"./sqlite-database";interface NameRow{name:string}it("creates persistence tables",()=>{const d=openAcademyDatabase(":memory:");const names=(d.prepare("SELECT name FROM sqlite_master WHERE type='table'").all() as unknown as NameRow[]).map(x=>x.name);expect(names).toContain("quiz_attempts");expect(names).toContain("readiness_assessments");d.close()});

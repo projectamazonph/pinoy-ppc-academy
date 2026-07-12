@@ -3,7 +3,7 @@
 **Product:** Pinoy PPC Academy  
 **Repository:** `pinoy-ppc-academy`  
 **Version:** 1.0  
-**Status:** Documentation baseline
+**Status:** Six-module route implemented in v0.6.0
 
 ## Purpose
 
@@ -38,3 +38,20 @@ The learner can describe how Amazon selling works, identify the main account obj
 - Break-even ACoS calculation with explanation.
 - Diagnostic classification scenarios.
 
+
+
+## Implementation checkpoint — v0.6.0
+
+The six documented modules are implemented as protected, ordered lessons with versioned deterministic quick checks. Access requires a saved readiness result recommending Amazon Foundations.
+
+Delivered behavior:
+
+- Course catalog and dashboard progression
+- Readiness-based access gate
+- Ordered lesson prerequisites
+- Pass-to-complete quick checks
+- Persistent progress and quiz attempts through the shared learning data model
+- Diagnostic framing across listing, inventory or price, advertising, and structure
+- Sanitized browser quiz payloads with no correct-answer identifiers
+
+The production PostgreSQL adapter, deeper exercises, and paid access controls remain open.

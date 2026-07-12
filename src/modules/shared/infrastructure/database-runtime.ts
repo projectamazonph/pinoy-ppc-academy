@@ -1,0 +1,1 @@
+import{join}from"node:path";import{openAcademyDatabase,type AcademyDatabase}from"./sqlite-database";declare global{var __pinoyPpcDatabase:AcademyDatabase|undefined}export function getAcademyDatabase(){return globalThis.__pinoyPpcDatabase??=(openAcademyDatabase(process.env.ACADEMY_DATABASE_PATH??join(process.cwd(),".data","academy.sqlite")))}

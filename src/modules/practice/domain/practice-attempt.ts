@@ -1,0 +1,1 @@
+export interface PracticeAttemptRecord{id:string;userId:string;labSlug:string;score:number;passed:boolean;criticalFailure:boolean;payload:Record<string,unknown>;createdAt:Date}export interface PracticeAttemptRepository{createAttempt(r:PracticeAttemptRecord):Promise<void>;listAttemptsForUser(userId:string):Promise<PracticeAttemptRecord[]>}

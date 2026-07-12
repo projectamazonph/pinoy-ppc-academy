@@ -1,0 +1,1 @@
+import{QuizService}from"../application/quiz-service";import{SqliteAssessmentRepository}from"./sqlite-assessment-repository";import{getAcademyDatabase}from"@/modules/shared/infrastructure/database-runtime";let s:QuizService|undefined;export const getQuizService=()=>s??=(new QuizService(new SqliteAssessmentRepository(getAcademyDatabase())));

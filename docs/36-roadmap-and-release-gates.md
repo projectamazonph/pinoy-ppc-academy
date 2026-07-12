@@ -42,3 +42,12 @@ Defines the implementation sequence and objective completion conditions.
 
 Launch means a real Filipino learner can discover the platform, complete the free starter path, buy a tier, access lessons, complete required simulations, submit proof, and receive support without manual database intervention.
 
+
+
+## Current implementation checkpoint — v0.5.0
+
+- Phase 0 documentation baseline: complete for current scope.
+- Phase 1 local foundation: secure local auth, SQLite development persistence, protected routes, and CI checks implemented. PostgreSQL and observability remain open.
+- Phase 2 public experience: landing page and public policy pages implemented. Commerce remains open.
+- Phase 3 career starter: eight modules, deterministic quick checks, saved progress, and readiness planner implemented.
+- Later phases remain planned and must not be represented as complete.

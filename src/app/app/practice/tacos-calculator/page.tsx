@@ -1,0 +1,3 @@
+import type{Route}from"next";import Link from "next/link";
+import {TacosCalculator} from "@/components/ppc/TacosCalculator";
+export default function TacosCalculatorPage(){return <div className="app-page"><Link className="lesson-back" href={"/app/courses/ppc-foundations/ppc-02-tacos-business-health" as Route}>← Back to TACoS lesson</Link><header className="lab-heading"><div><p className="eyebrow">PPC FOUNDATIONS / TACOS LAB</p><h1>Same ACoS. Different business health.</h1><p>Use the same currency for every amount. Compare ad spend, ad sales, total sales, organic sales, and advertising dependence.</p></div><span className="lab-status">LIVE CALCULATOR</span></header><TacosCalculator/></div>}

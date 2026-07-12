@@ -1,0 +1,1 @@
+import{it,expect}from"vitest";import{STARTER_MODULES}from"./starter-content";it("ships eight practical modules",()=>{expect(STARTER_MODULES).toHaveLength(8);for(const lesson of STARTER_MODULES){expect(lesson.outcomes.length).toBeGreaterThanOrEqual(3);expect(lesson.sections.length).toBeGreaterThanOrEqual(3);expect(lesson.quickCheck.questions.length).toBeGreaterThanOrEqual(2)}});

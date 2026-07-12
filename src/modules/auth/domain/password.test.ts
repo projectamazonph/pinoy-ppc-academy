@@ -1,0 +1,2 @@
+// @vitest-environment node
+import{describe,it,expect}from"vitest";import{hashPassword,verifyPassword,validatePassword}from"./password";describe("password",()=>{it("hashes and verifies",async()=>{const h=await hashPassword("A-careful-passphrase-2026!");expect(h).not.toContain("A-careful");expect(await verifyPassword("A-careful-passphrase-2026!",h)).toBe(true)});it("rejects weak passwords",()=>expect(validatePassword("password123").length).toBeGreaterThan(0))});

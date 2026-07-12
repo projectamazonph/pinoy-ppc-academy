@@ -1,0 +1,1 @@
+import{getQuizService}from"@/modules/assessment/infrastructure/assessment-runtime";import{getProgressService}from"@/modules/progress/infrastructure/progress-runtime";import{StarterLessonService}from"./starter-lesson-service";let s:StarterLessonService|undefined;export const getStarterLessonService=()=>s??=(new StarterLessonService(getQuizService(),getProgressService()));

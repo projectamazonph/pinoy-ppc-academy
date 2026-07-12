@@ -1,0 +1,1 @@
+import{ProgressService}from"../application/progress-service";import{SqliteProgressRepository}from"./sqlite-progress-repository";import{getAcademyDatabase}from"@/modules/shared/infrastructure/database-runtime";let s:ProgressService|undefined;export const getProgressService=()=>s??=(new ProgressService(new SqliteProgressRepository(getAcademyDatabase())));

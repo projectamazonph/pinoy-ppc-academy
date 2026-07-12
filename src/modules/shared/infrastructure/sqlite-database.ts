@@ -1,0 +1,10 @@
+import {mkdirSync} from "node:fs";import{dirname}from"node:path";import{DatabaseSync}from"node:sqlite";export type AcademyDatabase=DatabaseSync;
+export function openAcademyDatabase(path:string){if(path!==":memory:")mkdirSync(dirname(path),{recursive:true});const d=new DatabaseSync(path);d.exec("PRAGMA foreign_keys=ON; PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000;");d.exec(`
+CREATE TABLE IF NOT EXISTS users(id TEXT PRIMARY KEY,email TEXT NOT NULL UNIQUE COLLATE NOCASE,display_name TEXT NOT NULL,password_hash TEXT NOT NULL,role TEXT NOT NULL,created_at TEXT NOT NULL,updated_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS sessions(id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,token_hash TEXT NOT NULL UNIQUE,expires_at TEXT NOT NULL,revoked_at TEXT,created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS lesson_progress(user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,course_slug TEXT NOT NULL,lesson_id TEXT NOT NULL,completed_at TEXT NOT NULL,PRIMARY KEY(user_id,course_slug,lesson_id));
+CREATE TABLE IF NOT EXISTS practice_attempts(id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,lab_slug TEXT NOT NULL,score INTEGER NOT NULL,passed INTEGER NOT NULL,critical_failure INTEGER NOT NULL,payload_json TEXT NOT NULL,created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS quiz_attempts(id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,quiz_id TEXT NOT NULL,lesson_id TEXT NOT NULL,quiz_version INTEGER NOT NULL,score INTEGER NOT NULL,passed INTEGER NOT NULL,answers_json TEXT NOT NULL,created_at TEXT NOT NULL);
+CREATE TABLE IF NOT EXISTS readiness_assessments(id TEXT PRIMARY KEY,user_id TEXT NOT NULL REFERENCES users(id) ON DELETE CASCADE,score INTEGER NOT NULL,route TEXT NOT NULL,title TEXT NOT NULL,summary TEXT NOT NULL,input_json TEXT NOT NULL,actions_json TEXT NOT NULL,created_at TEXT NOT NULL);
+CREATE INDEX IF NOT EXISTS idx_readiness_user_created ON readiness_assessments(user_id,created_at DESC);
+`);return d}

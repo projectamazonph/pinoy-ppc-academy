@@ -3,7 +3,7 @@
 **Product:** Pinoy PPC Academy  
 **Repository:** `pinoy-ppc-academy`  
 **Version:** 1.0  
-**Status:** Documentation baseline
+**Status:** Shared engine started in v0.8.0
 
 ## Purpose
 
@@ -56,3 +56,8 @@ Portfolio
 
 Simulator grading uses explicit rules, state comparisons, thresholds, and human-reviewed rubrics. No response is sent to an LLM. Explanations are authored and versioned with each scenario.
 
+
+
+## v0.8 implementation checkpoint
+
+The first shared simulator slice now provides versioned scenarios, deterministic rule evaluation, five scoring dimensions, critical-failure handling, server-side persistence, access gates, and exportable artifacts. The current implementation is the Sponsored Products automatic research Campaign Builder scenario. Reset, replay history, multi-action sessions, and mobile guided state persistence remain planned.

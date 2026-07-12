@@ -1,0 +1,1 @@
+import type{AssessmentRepository,QuizAttemptRecord}from"../domain/assessment";export class InMemoryAssessmentRepository implements AssessmentRepository{records:QuizAttemptRecord[]=[];async createAttempt(r:QuizAttemptRecord){this.records.push(r)}async listAttemptsForUser(u:string,q?:string){return this.records.filter(x=>x.userId===u&&(!q||x.quizId===q))}}

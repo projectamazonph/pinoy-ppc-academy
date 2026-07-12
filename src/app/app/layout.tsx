@@ -1,0 +1,1 @@
+import{AppShell}from"@/components/platform/AppShell";import{requireCurrentUser}from"@/lib/server/auth";export const dynamic="force-dynamic";export default async function Layout({children}:{children:React.ReactNode}){const u=await requireCurrentUser();return<AppShell user={u}>{children}</AppShell>}

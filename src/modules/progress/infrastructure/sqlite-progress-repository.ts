@@ -1,0 +1,4 @@
+import type { AcademyDatabase } from "@/modules/shared/infrastructure/sqlite-database";
+import type { LessonProgressRecord, ProgressRepository } from "../domain/progress";
+interface Row { user_id:string; course_slug:string; lesson_id:string; completed_at:string }
+export class SqliteProgressRepository implements ProgressRepository { constructor(private d:AcademyDatabase){} async listCompletedLessons(userId:string,courseSlug:string){const rows=this.d.prepare("SELECT user_id,course_slug,lesson_id,completed_at FROM lesson_progress WHERE user_id=? AND course_slug=? ORDER BY completed_at").all(userId,courseSlug) as unknown as Row[];return rows.map(r=>({userId:r.user_id,courseSlug:r.course_slug,lessonId:r.lesson_id,completedAt:new Date(r.completed_at)}))} async completeLesson(r:LessonProgressRecord){this.d.prepare("INSERT OR IGNORE INTO lesson_progress VALUES(?,?,?,?)").run(r.userId,r.courseSlug,r.lessonId,r.completedAt.toISOString())}}

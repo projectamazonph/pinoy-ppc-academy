@@ -1,0 +1,1 @@
+import{AuthService}from"../application/auth-service";import{SqliteAuthRepository}from"./sqlite-auth-repository";import{getAcademyDatabase}from"@/modules/shared/infrastructure/database-runtime";let s:AuthService|undefined;export const getAuthService=()=>s??=(new AuthService(new SqliteAuthRepository(getAcademyDatabase())));

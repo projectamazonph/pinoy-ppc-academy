@@ -1,0 +1,1 @@
+export type AssessmentActionState={status:"idle"}|{status:"error";message:string}|{status:"result";score:number;passed:boolean;message:string;feedback:Array<{questionId:string;correct:boolean;explanation:string}>};export const initialAssessmentActionState:AssessmentActionState={status:"idle"};

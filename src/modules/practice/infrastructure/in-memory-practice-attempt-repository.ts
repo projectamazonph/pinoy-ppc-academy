@@ -1,0 +1,1 @@
+import type{PracticeAttemptRecord,PracticeAttemptRepository}from"../domain/practice-attempt";export class InMemoryPracticeAttemptRepository implements PracticeAttemptRepository{records:PracticeAttemptRecord[]=[];async createAttempt(r:PracticeAttemptRecord){this.records.push(r)}async listAttemptsForUser(u:string){return this.records.filter(x=>x.userId===u)}}
