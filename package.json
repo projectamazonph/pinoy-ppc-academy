@@ -19,7 +19,10 @@
     "test:e2e": "playwright test",
     "guard:no-ai": "node scripts/check-no-ai.mjs",
     "guard:content": "node scripts/check-content-trust.mjs",
-    "verify": "npm run guard:no-ai && npm run guard:content && npm run typecheck && npm run lint && npm run test && npm run build"
+    "verify": "npm run guard:no-ai && npm run guard:content && npm run typecheck && npm run lint && npm run test && npm run build",
+    "lint:check": "eslint .",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,md}\"",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "next": "16.2.10",
